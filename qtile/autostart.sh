@@ -14,13 +14,14 @@ run flameshot &
 run nm-applet &
 run blueman-applet &
 run "conky --daemonize --pause=5" &
+run "kdeconnectd" &
+run "copyq" &
 
 picom --config=$HOME/.config/picom/picom.conf &
 blueman-applet &
 /usr/bin/dunst &
 nitrogen --restore &
 lxappearance --sync &
-picom &
 mate-power-manager &
 
 

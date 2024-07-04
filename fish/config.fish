@@ -20,4 +20,3 @@ alias in "yay -S"
 alias un "yay -Rcs"
 alias sys "sudo systemctl"
 alias neofetch "neofetch --ascii_distro arch_small "
-

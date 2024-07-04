@@ -25,6 +25,8 @@ def lock_on_sleep():
 mod = "mod4"
 alt = "mod3"
 terminal = "kitty"
+emoji = "rofi -show emoji"
+power = "sh ~/git/rofi-applets/applet -r powermenu"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -88,13 +90,24 @@ keys = [
     Key([mod], "b", lazy.spawn("firefox"), desc="WEB BROWSER"),
     Key([mod], "c", lazy.spawn("code"), desc="VISUAL STUDIO CODE / IDE"),
     Key([mod,"shift"], "f", lazy.spawn("pcmanfm"), desc="FILE BROWSER"),
+    Key([mod], "r", lazy.spawn("kitty -e ranger"), desc="Ranger"),
     Key([mod], "p", lazy.spawn("keepassxc"), desc="KEEPASSXC / Password Manager"),
     Key([mod], "s", lazy.spawn("/home/punter/Applications/Spotube/spotube"), desc="Spotube/Music Client"),
+    Key([mod], "v", lazy.spawn("copyq show"), desc="Copyq clipboard"),
 
     ### ROFI 
+    #
+    
     Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Rofi drun"),
     Key([mod], "z", lazy.spawn("rofi -show combi"), desc="Rofi combi"),
     Key([mod,"shift"], "b", lazy.spawn("rofi -show filebrowser"), desc="Rofi Filebrowser"),
+    Key([], "XF86Calculator", lazy.spawn("rofi -show calc -modi calc -no-show-match -no-sort -calc-command "), desc="Rofi Calculator"),
+    #Key([mod], "c", lazy.spawn("rofi -show calc -modi calc -no-show-match -no-sort -calc-command "), desc="Rofi Calculator"),
+    #Key([mod], "w", lazy.spawn("./rofi-wifi-menu"), desc="Rofi WIFI menu"),
+    Key([mod], "e", lazy.spawn(emoji), desc="Rofi emoji menu"),
+    Key([mod,"shift"], "e", lazy.spawn(power), desc="Rofi Logout menu"),
+
+      
     
     ### Volume
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle"),desc="Mute/Unmute Volume"),
@@ -116,6 +129,8 @@ keys = [
 
     ### LOCK SCREEN
     Key([mod], "x", lazy.spawn("i3lock-fancy"), desc="LockScreen"),
+
+
 ]
 
 # Add key bindings to switch VTs in Wayland.
